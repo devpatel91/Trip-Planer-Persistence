@@ -42,7 +42,7 @@ $(function() {
     .then(function(promises) {
       $(tripModule.load);
 
-      var enhanced = {
+      enhanced = {
         hotels: promises[0].map(attractionModule.create),
         restaurants: promises[1].map(attractionModule.create),
         activities: promises[2].map(attractionModule.create),

@@ -1,6 +1,8 @@
 'use strict';
 /* global $ attractionModule hotels restaurants activities */
 
+var enhanced;
+
 /**
  * This module holds collection of enhanced attraction objects which can be
  * easily looked up by type and id. It is primarily used when someone clicks

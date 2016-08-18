@@ -22,8 +22,6 @@ var tripModule = (function () {
   var days = [],
       currentDay;
 
-      console.log(days);
-
   // jQuery selections
 
   var $addButton, $removeButton;
@@ -55,7 +53,7 @@ var tripModule = (function () {
       currentDay = newDay;
     }
     switchTo(newDay);
-   
+
     $.ajax({
       method: 'POST',
       url:'/api/days',
