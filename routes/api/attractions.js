@@ -23,6 +23,7 @@ router.get('/restaurants', function(req, res, next){
     });
 });
 
+
 router.get('/activities', function(req, res, next){
   Activity
     .findAll()
@@ -30,8 +31,5 @@ router.get('/activities', function(req, res, next){
       res.send(hotels);
     });
 });
-
-
-
 
 module.exports = router;
