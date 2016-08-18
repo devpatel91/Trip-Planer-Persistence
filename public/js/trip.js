@@ -22,6 +22,8 @@ var tripModule = (function () {
   var days = [],
       currentDay;
 
+      console.log(days);
+
   // jQuery selections
 
   var $addButton, $removeButton;
