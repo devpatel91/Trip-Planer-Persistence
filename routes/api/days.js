@@ -5,13 +5,20 @@ var router = require('express').Router();
 var Day = require('../../models/day');
 
 router.get('/days', function(req, res, next){
-  res.send("hello");
+ 	Day.findAll({})
+ 	.then(function(dayList){
+ 		res.send(dayList);
+ 	})
+ 	.catch(function(error){
+ 		console.log(error);
+ 	})
 });
 
 router.post('/days', function(req, res, next){
+
   Day.create({number: req.body.day})
   .then(function(createdDay){
-  	console.log(createdDay)
+  
   })
   .catch(function(error){
   	console.log(error);
