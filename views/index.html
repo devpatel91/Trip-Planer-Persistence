@@ -82,7 +82,35 @@
   </div>
 </div>
 <script>
-  {% autoescape false %}
+$(function(){
+
+console.log("hello");
+
+
+
+  $.ajax({
+    method: "GET",
+    url:'/api/hotels'
+  })
+  .then(function(hotelList){
+    console.log(hotelList);
+  })
+  .catch(function(error){
+    console.log(error);
+  })
+
+})
+  //   $.ajax({
+  //   method: "GET",
+  //   url:'/api/hotels'
+  // })
+  // .then(function(hotelList){
+  //   var hotels = hotelList;
+  // })
+  // .catch(function(error){
+  //   console.log(error);
+  // })
+ {% autoescape false %}
   var hotels = {{ templateHotels | json }};
   var restaurants = {{ templateRestaurants | json }};
   var activities = {{ templateActivities | json }};
