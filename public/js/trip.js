@@ -15,12 +15,13 @@
  * which take `attraction` objects and pass them to `currentDay`.
  */
 
+var currentDay;
+
 var tripModule = (function () {
 
   // application state
 
-  var days = [],
-      currentDay;
+  var days = [];
 
   // jQuery selections
 
@@ -58,7 +59,7 @@ var tripModule = (function () {
       method: 'POST',
       url:'/api/days',
       data: {number: newDay.number}
-    })
+    });
   }
 
   function deleteCurrentDay () {
