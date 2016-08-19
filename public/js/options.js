@@ -54,6 +54,19 @@ $(function() {
       .then(function(data) {
         console.log(data);
       });
+    } else {
+
+       $.ajax({
+        method: 'POST',
+        url: '/api/days/' + currentDay.number + '/' + type,
+        data: {
+          itemId: id
+
+        }
+      })
+      .then(function(data) {
+        console.log(data);
+      });
     }
 
 

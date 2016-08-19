@@ -42,12 +42,27 @@ router.post('/days/:id/hotel', function(req, res, next) {
     });
 });
 
-router.post('/days/:id/restaurants', function(req, res, next) {
-  res.send("hello");
+router.post('/days/:id/restaurant', function(req, res, next) {
+ var restaurantId = req.body.itemId;
+ var currentDay = req.params.id;
+
+ Day.update({
+  restaurantId: restaurantId,
+  dayId: currentDay
+ },{
+    where:{
+      
+      number: currentDay
+    }
+ })
+  .then(function(result) {
+      console.log('hotel updated!');
+    });
+
 });
 
-router.post('/days/:id/activities', function(req, res, next) {
-  res.send("hello");
+router.post('/days/:id/activity', function(req, res, next) {
+  res.send("hello2");
 });
 
 module.exports = router;
